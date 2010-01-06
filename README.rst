@@ -1,6 +1,6 @@
-==========
+==============
 django-slimmer
-==========
+==============
 
 This module is a django conversion of CheckoutableTemplates Zope package: http://zope.org/Members/peterbe/CheckoutableTemplates
 

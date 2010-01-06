@@ -13,7 +13,6 @@ def compress_html(view_func):
     """
     def _wrapped_view_func(request, *args, **kwargs):
         response = view_func(request, *args, **kwargs)
-        import pdb;pdb.set_trace()
         if isinstance(response, HttpResponse) and \
             response.get('Content-Type',None).find('text/html;')==0:
             response.content = slimmer.xhtml_slimmer(response.content)

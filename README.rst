@@ -7,6 +7,9 @@ This module is a django conversion of CheckoutableTemplates Zope package: http:/
 The slimmer is taken directly from the Zope package, with django middleware
 and a view decorator added.
 
+The slimming process takes html and removes whitespace, optimizes inline css,
+removes oneline comments.  The end result can be a significant file size
+reduction even after the page is served with gzip compression.
 
 Installation ::
 

@@ -90,7 +90,10 @@ f_IMD = re.I|re.MULTILINE|re.DOTALL
 f_MD = re.MULTILINE|re.DOTALL
 f_M = re.MULTILINE
 
-html_comments_oneline = re.compile(r'<!--.*?-->')
+# This expression matches normal comments but specifically ignores Internet
+# Explorer downlevel-hidden conditional comments - see MSDN for syntax details:
+# http://msdn.microsoft.com/en-us/library/ms537512(VS.85).aspx#syntax
+html_comments_oneline = re.compile(r'<!--[^[][^\r\n]+-->')
 
 html_inline_css = re.compile(r'<style.*?>.*?</style>', f_IMD)
 

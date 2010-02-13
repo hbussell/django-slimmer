@@ -111,12 +111,12 @@ def _html_slimmer(html):
     # 1. optimize inline CSS
     for styletag in html_inline_css.findall(html):
 	html = html.replace(styletag, css_slimmer(styletag))
-	
-    # 2. Remove excessive whitespace between tags
+
+    # 2. Remove oneline comments
+    html = html_comments_oneline.sub('', html)    
+
+    # 3. Remove excessive whitespace between tags
     html = re.sub(r'>\s+<','><', html)
-    
-    # 3. Remove oneline comments
-    html = html_comments_oneline.sub('', html)
     
     # 4. In every tag, remove quotes on numerical attributes and all
     # excessive whitespace

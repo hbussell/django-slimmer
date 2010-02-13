@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='django-slimmer',
-version='0.0.1',
+version='0.0.2',
 description='Html compression as middleware and view decorators',
 author='Harley Bussell',
 author_email='modmac@gmail.com',
